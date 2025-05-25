@@ -17,7 +17,7 @@ public class BaseSecurityService {
     private static final String[] WHITE_LIST_URLS= {
             "/swagger-ui/**",
             "/v2/api-docs",
-            "/v3/api-docs",
+            "/v3/api-docs/**",
             "/api/auth/**"
     };
 
@@ -28,4 +28,6 @@ public class BaseSecurityService {
                 .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class);
         return httpSecurity;
     }
+
+
 }
